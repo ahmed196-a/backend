@@ -9,7 +9,14 @@ import dotene from 'dotenv';
 dotene.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://www.mkaudiology.com" // Allowed frontend URL
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  credentials: true // Allow cookies/auth headers
+}));
 app.use(express.json());
 
 
