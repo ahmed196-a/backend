@@ -10,12 +10,18 @@ dotene.config();
 
 const app = express();
 app.use(cors({
-  origin: [
-    "https://www.mkaudiology.com" // Allowed frontend URL
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // Allowed HTTP methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-  credentials: true // Allow cookies/auth headers
+  origin: "https://www.mkaudiology.com", // Allowed domain
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
+// ✅ Preflight requests handle karna
+app.options("*", cors({
+  origin: "https://www.mkaudiology.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
 app.use(express.json());
 
