@@ -9,7 +9,12 @@ import dotene from 'dotenv';
 dotene.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "https://backend-f3m1.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 
 // ✅ Preflight requests handle karna
 // app.options("*", cors({
