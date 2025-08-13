@@ -44,7 +44,9 @@ const upload = multer({
 });
 
 // Routes
-
+app.get("/getHello",(req,res)=>{
+  res.status(200).json({"message":"hello"})
+})
 app.post("/saveImageAndDetails/:originalname/:path", async (req, res) => {
   try {
     const { originalname, path } = req.params;
