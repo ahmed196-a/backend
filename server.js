@@ -10,7 +10,7 @@ dotene.config();
 
 const app = express();
 app.use(cors({
-    origin: "https://www.mkaudiology.com/",
+    origin: "https://www.mkaudiology.com",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
