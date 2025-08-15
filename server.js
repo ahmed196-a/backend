@@ -10,7 +10,7 @@ dotene.config();
 
 const app = express();
 app.use(cors({
-    origin: "https://www.mkaudiology.com",
+    origin: "https://backend-f3m1.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -26,10 +26,10 @@ app.use(cors({
 app.use(express.json());
 
 
-mongoose.connect(`mongodb+srv://ahmed457abbas:<db_password>@cluster0.tsocvvd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect(`mongodb+srv://ahmed457abbas:<db_password>@cluster0.tsocvvd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 // mongoose.connect(process.env.MONGODB_URI, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
