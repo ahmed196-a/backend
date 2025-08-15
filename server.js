@@ -26,10 +26,13 @@ app.use(cors({
 app.use(express.json());
 
 
-mongoose.connect(`mongodb+srv://ahmed457abbas:Bingo786!!@cluster0.tsocvvd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
+
+
+mongoose.connect(`mongodb+srv://ahmed457abbas:Ahmed%4012345@cluster0.tsocvvd.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 // mongoose.connect(process.env.MONGODB_URI, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
